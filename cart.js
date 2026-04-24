@@ -1,9 +1,12 @@
-let cart = [];
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
 function addToCart(productName) {
-    cart.push(productName);
-    updateCart();
+  cart.push(productName);
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+  alert("Item added.");
+  updateCart();
 }
+
 
 function updateCart() {
     const cartCount = document.getElementById('cart-count');
@@ -31,8 +34,10 @@ function updateCart() {
 }
 
 function clearCart() {
-    cart = [];
-    updateCart();
+  cart = [];
+  sessionStorage.removeItem("cart");
+  updateCart();
+  alert("Cart cleared.");
 }
 
 function processOrder() {
