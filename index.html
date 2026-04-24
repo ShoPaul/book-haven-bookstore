@@ -49,8 +49,29 @@
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Book Haven Bookstore. All rights reserved.</p>
-    </footer>
+ 
+<footer>
+  <section class="subscribe-section">
+    <h3>Subscribe to our newsletter</h3>
+
+    <input type="email" id="subscribeEmail" placeholder="Enter your email">
+    <button onclick="subscribe()">Subscribe</button>
+  </section>
+
+  <p>&copy; 2024 Book Haven Bookstore. All rights reserved.</p>
+</footer>
+
+<script>
+function subscribe() {
+  let email = document.getElementById("subscribeEmail").value;
+
+  if (email === "" || !email.includes("@")) {
+    alert("Please enter a valid email");
+  } else {
+    alert("Subscribed successfully!");
+  }
+}
+</script>
+
 </body>
 </html>
